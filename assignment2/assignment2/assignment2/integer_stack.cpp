@@ -1,5 +1,5 @@
 //
-//  stack.cpp
+//  integr_stack.cpp
 //  assignment2
 //
 //  Created by Venkata.bankapalli on 24/07/18.
