@@ -113,7 +113,7 @@ int main()
     long lengthOfInputStr = inputStr.length();
     struct Stack stack(lengthOfInputStr);
     stack.push(inputStr);
-    cout << "String stored in stack is: " << readString(stack) << "\n";
     cout << "Reverse of the string stored in stack is: " << reverseString (stack) << "\n";
+    cout << "String stored in stack is: " << readString(stack) << "\n";
     return 0;
 }
