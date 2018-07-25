@@ -9,35 +9,48 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 5
 
 class Stack
 {
     int top;
+    long capacity;
 public:
-    int a[MAX];
-    bool push(int x);
-    int pop();
+    char *a;
+    bool push(string inputStr);
+    char pop();
     bool isEmpty();
-    int peek();
-    Stack () {top = -1;};
+    char peek();
+    Stack (long capacity)
+    {
+        this->top=-1;
+        this->capacity=capacity;
+        this->a=new char[capacity];
+    };
+    Stack ()
+    {
+        this->top=-1;
+    }
 };
 
-bool Stack::push(int x)
+bool Stack::push(string inputStr)
 {
-    if (top >= MAX-1)
+    if (top >= capacity-1)
     {
         cout << "Stack Overflow!!!\n";
         return false;
     }
     else
     {
-        a[++top] = x;
+        long lengthOfInputStr = inputStr.length();
+        for (int i=0;i<lengthOfInputStr;i++)
+        {
+            this->a[++top] = inputStr[i];
+        }
         return true;
     }
 }
 
-int Stack::pop ()
+char Stack::pop ()
 {
     if (top < 0)
     {
@@ -57,63 +70,50 @@ bool Stack::isEmpty()
     return (top < 0);
 }
 
-int Stack::peek()
+char Stack::peek()
 {
     return a[top];
 }
 
+string reverseString (Stack stack)
+{
+    string str;
+    struct Stack tempStack1 = stack;
+    while (!tempStack1.isEmpty())
+    {
+        str+=tempStack1.pop();
+    }
+    return str;
+}
+
+string readString (Stack stack)
+{
+    string str;
+    struct Stack tempStack1 = stack;
+    while (!tempStack1.isEmpty())
+    {
+        str+=tempStack1.pop();
+    }
+    tempStack1.push(str);
+    str = "";
+    while (!tempStack1.isEmpty())
+    {
+        str+=tempStack1.pop();
+    }
+    return str;
+}
+
 int main()
 {
-    cout << "Simple Stack That Stores Integers...\n";
-    struct Stack stack;
-    while (true)
-    {
-        int userSelection;
-        cout << "Select the option for the operation that you want to perform on the stack...\n";
-        cout << "1. Push\t2. Pop\t3. Peek\t4. IsStackEmpty\t5. Exit\t(Enter 1 or 2 or 3 or 4 or 5)\n";
-        cin >> userSelection;
-        switch (userSelection) {
-            case 1:
-                int valueToPush;
-                cout << "Enter a interger value to push into Stack\n";
-                cin >> valueToPush;
-                stack.push(valueToPush);
-                break;
-            case 2:
-                if (!stack.isEmpty())
-                {
-                    cout << "Popped value: " << stack.pop() << "\n";
-                }
-                else
-                {
-                    cout << "Cannot pop from an empty stack!\n";
-                }
-                break;
-            case 3:
-                if (!stack.isEmpty())
-                {
-                    cout << "Value at the top of the stack is: " << stack.peek() << "\n";
-                }
-                else
-                {
-                    cout << "Cannot peek into an empty stack!\n";
-                }
-                break;
-            case 4:
-                if (stack.isEmpty())
-                {
-                    cout << "Stack is empty\n";
-                }
-                else
-                {
-                    cout << "Stack is not empty\n";
-                }
-                break;
-            case 5:
-                exit(0);
-            default:
-                break;
-        }
-    }
+    cout << "Simple Stack That Stores String...\n";
+    
+    cout << "Please enter a string to store into stack...\n";
+    string inputStr;
+    std::getline(std::cin, inputStr);
+    long lengthOfInputStr = inputStr.length();
+    struct Stack stack(lengthOfInputStr);
+    stack.push(inputStr);
+    cout << "String stored in stack is: " << readString(stack) << "\n";
+    cout << "Reverse of the string stored in stack is: " << reverseString (stack) << "\n";
     return 0;
 }
