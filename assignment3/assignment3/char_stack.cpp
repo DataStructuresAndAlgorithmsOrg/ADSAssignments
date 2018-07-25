@@ -88,17 +88,11 @@ string reverseString (Stack stack)
 
 string readString (Stack stack)
 {
-    string str;
+    string str = "";
     struct Stack tempStack1 = stack;
     while (!tempStack1.isEmpty())
     {
-        str+=tempStack1.pop();
-    }
-    tempStack1.push(str);
-    str = "";
-    while (!tempStack1.isEmpty())
-    {
-        str+=tempStack1.pop();
+        str=tempStack1.pop()+str;
     }
     return str;
 }
@@ -113,7 +107,7 @@ int main()
     long lengthOfInputStr = inputStr.length();
     struct Stack stack(lengthOfInputStr);
     stack.push(inputStr);
-    cout << "Reverse of the string stored in stack is: " << reverseString (stack) << "\n";
     cout << "String stored in stack is: " << readString(stack) << "\n";
+    cout << "Reverse of the string stored in stack is: " << reverseString (stack) << "\n";
     return 0;
 }
