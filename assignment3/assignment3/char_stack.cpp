@@ -2,6 +2,8 @@
 //  char_stack.cpp
 //  assignment3
 //
+//  Stack to hold a string and to perform string reverse functionality
+//
 //  Created by Venkata.bankapalli on 24/07/18.
 //  Copyright © 2018 Bankapalli. All rights reserved.
 //
@@ -14,22 +16,22 @@ class Stack
 {
     int top;
     long capacity;
-public:
-    char *a;
-    bool push(string inputStr);
-    char pop();
-    bool isEmpty();
-    char peek();
-    Stack (long capacity)
-    {
-        this->top=-1;
-        this->capacity=capacity;
-        this->a=new char[capacity];
-    };
-    Stack ()
-    {
-        this->top=-1;
-    }
+    public:
+        char *a;
+        bool push(string inputStr);
+        char pop();
+        bool isEmpty();
+        char peek();
+        Stack (long capacity)
+        {
+            this->top=-1;
+            this->capacity=capacity;
+            this->a=new char[capacity];
+        };
+        Stack ()
+        {
+            this->top=-1;
+        }
 };
 
 bool Stack::push(string inputStr)

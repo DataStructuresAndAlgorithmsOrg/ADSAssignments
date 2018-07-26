@@ -2,6 +2,8 @@
 //  integr_stack.cpp
 //  assignment2
 //
+//  Stach to hold numbers
+//
 //  Created by Venkata.bankapalli on 24/07/18.
 //  Copyright © 2018 Bankapalli. All rights reserved.
 //
