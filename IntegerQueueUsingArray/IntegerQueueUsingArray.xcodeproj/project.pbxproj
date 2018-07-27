@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		280CCD12210B808500ACD865 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 280CCD11210B808500ACD865 /* main.cpp */; };
+		280CCD12210B808500ACD865 /* IntegerQueueUsingArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 280CCD11210B808500ACD865 /* IntegerQueueUsingArray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		280CCD0E210B808500ACD865 /* IntegerQueueUsingArray */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IntegerQueueUsingArray; sourceTree = BUILT_PRODUCTS_DIR; };
-		280CCD11210B808500ACD865 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		280CCD11210B808500ACD865 /* IntegerQueueUsingArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntegerQueueUsingArray.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 		280CCD05210B808500ACD865 = {
 			isa = PBXGroup;
 			children = (
-				280CCD10210B808500ACD865 /* integer_queue_using_array */,
+				280CCD10210B808500ACD865 /* IntegerQueueUsingArray */,
 				280CCD0F210B808500ACD865 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		280CCD10210B808500ACD865 /* integer_queue_using_array */ = {
+		280CCD10210B808500ACD865 /* IntegerQueueUsingArray */ = {
 			isa = PBXGroup;
 			children = (
-				280CCD11210B808500ACD865 /* main.cpp */,
+				280CCD11210B808500ACD865 /* IntegerQueueUsingArray.cpp */,
 			);
-			path = integer_queue_using_array;
+			path = IntegerQueueUsingArray;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +119,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				280CCD12210B808500ACD865 /* main.cpp in Sources */,
+				280CCD12210B808500ACD865 /* IntegerQueueUsingArray.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
