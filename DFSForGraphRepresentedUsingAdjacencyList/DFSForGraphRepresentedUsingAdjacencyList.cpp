@@ -65,17 +65,29 @@ void Graph::addEdge(int v, int w)
 
 int main ()
 {
-	Graph graph(4);
 
+    cout << "This is Depth first search traversal of a graph represented in adjacency list form\n";
+    cout << "Enter number of vertices in the graph\n";
+    int numberOfVertices;
+    cin >> numberOfVertices;
+	Graph graph(numberOfVertices);
 
-	graph.addEdge(0,1);
-	graph.addEdge(0,2);
-	graph.addEdge(1,2);
-	graph.addEdge(2,0);
-	graph.addEdge(2,3);
-	graph.addEdge(3,3);
+    cout << "Enter number of edges\n";
+    int numberOfEdges;
+    cin >> numberOfEdges;
+    
+    cout <<"Enter nodes between which there are edges\n";
+    int node1, node2;
+    for(int i=0; i<numberOfEdges; i++)
+    {
+        cin >>node1>>node2;
+        graph.addEdge(node1,node2);
+    }
 
-	graph.DFS(2);
+    cout << "Enter the vertex for which DFS has to be perfomed\n";
+    int vertexForDFS;
+    cin >> vertexForDFS;
+	graph.DFS(vertexForDFS);
 
 	return 0;
 }

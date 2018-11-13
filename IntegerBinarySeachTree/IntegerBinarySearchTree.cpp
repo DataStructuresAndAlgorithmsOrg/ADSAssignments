@@ -88,6 +88,8 @@ int heightOfTree(Node* root)
 
 int main ()
 {
+	cout << "This is a Binary Search Tree implementation to store integers\n";
+
 	Node *root = NULL;
 
 	while (1)
