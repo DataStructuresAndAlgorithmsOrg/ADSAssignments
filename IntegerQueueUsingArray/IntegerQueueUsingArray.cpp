@@ -109,21 +109,19 @@ int main()
     {
         int userSelection;
         cout << "Select the option for the operation that you want to perform on the queue...\n";
-        cout << "1. Enqueue\t2. Dequeue\t3. Exit\t(Enter 1 or 2 or 3)\n";
+        cout << "1. Enqueue\n2. Dequeue\n3. Traversal\n4. Exit\n(Enter 1 or 2 or 3 or 4): ";
         cin >> userSelection;
         switch (userSelection) {
             case 1:
                 int valueToEnqueue;
-                cout << "Enter a interger value to added into queue\n";
+                cout << "Enter a interger value to added into queue: ";
                 cin >> valueToEnqueue;
                 queue.enqueue(valueToEnqueue);
-                queue.traverseQueue();
                 break;
             case 2:
                 if (!queue.isQueueEmpty())
                 {
                     queue.dequeue();
-                    queue.traverseQueue();
                 }
                 else
                 {
@@ -131,6 +129,16 @@ int main()
                 }
                 break;
             case 3:
+                if (!queue.isQueueEmpty())
+                {
+                    queue.traverseQueue();
+                }
+                else
+                {
+                    cout << "Cannot Traversal on an empty queue!\n";
+                }
+                break;
+            case 4:
                 exit(0);
             default:
                 break;

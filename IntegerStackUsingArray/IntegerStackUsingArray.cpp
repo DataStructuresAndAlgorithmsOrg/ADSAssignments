@@ -72,12 +72,12 @@ int main()
     {
         int userSelection;
         cout << "Select the option for the operation that you want to perform on the stack...\n";
-        cout << "1. Push\t2. Pop\t3. Peek\t4. IsStackEmpty\t5. Exit\t(Enter 1 or 2 or 3 or 4 or 5)\n";
+        cout << "1. Push\n2. Pop\n3. Peek\n4. IsStackEmpty\n5. Exit\n(Enter 1 or 2 or 3 or 4 or 5): ";
         cin >> userSelection;
         switch (userSelection) {
             case 1:
                 int valueToPush;
-                cout << "Enter a interger value to push into Stack\n";
+                cout << "Enter a interger value to push into Stack: ";
                 cin >> valueToPush;
                 stack.push(valueToPush);
                 break;
