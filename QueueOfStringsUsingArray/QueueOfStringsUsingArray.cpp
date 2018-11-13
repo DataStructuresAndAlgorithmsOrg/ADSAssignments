@@ -49,7 +49,7 @@ class Queue
             }
         }
     
-        char* dequeue ()
+        void dequeue ()
         {
             if (isQueueEmpty())
             {
@@ -113,7 +113,7 @@ int main()
     {
         int userSelection;
         cout << "Select the option for the operation that you want to perform on the queue...\n";
-        cout << "1. Enqueue\t2. Dequeue\t3. Exit\t(Enter 1 or 2 or 3)\n";
+        cout << "1. Enqueue\t2. Dequeue\t3. TraverseQueue\t4. IsQueueEmpty\t5. Exit\n(Enter 1 or 2 or 3 or 4 or 5)\n";
         cin >> userSelection;
         if (1 == userSelection) 
         {
@@ -121,14 +121,14 @@ int main()
             cout << "Enter a word to be added into queue\n";
             cin >> valueToEnqueue;
             queue.enqueue(valueToEnqueue);
-            queue.traverseQueue();
+            //queue.traverseQueue();
         }
         else if (2 == userSelection) 
         {
             if (!queue.isQueueEmpty())
             {
                 queue.dequeue();
-                queue.traverseQueue();
+                //queue.traverseQueue();
             }
             else
             {
@@ -137,7 +137,18 @@ int main()
         }
         else if (3 == userSelection) 
         {
-                exit(0);
+            queue.traverseQueue();
+        }
+        else if (4 == userSelection) 
+        {
+            if(queue.isQueueEmpty())
+                cout << "Queue is empty\n";
+            else
+                cout << "Queue is not empty\n";
+        }
+        else if (5 == userSelection) 
+        {
+            exit(0);
         }
     }
     return 0;
