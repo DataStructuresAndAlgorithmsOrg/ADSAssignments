@@ -59,6 +59,7 @@ class StringStackUsingLinkedList
 		{
 			if (top != NULL)
 			{
+				cout << "Elements in the stack are: ";
 				Node *temp = top;
 				while (temp->next != NULL)
 				{
@@ -105,7 +106,6 @@ int main ()
 		else if (3 == selectedOperation)
 		{
 			cout << "Selected operation is display\n";
-			cout << "Elements in the stack are\n";
 			stack.display();
 		}
 		else if (4 == selectedOperation)

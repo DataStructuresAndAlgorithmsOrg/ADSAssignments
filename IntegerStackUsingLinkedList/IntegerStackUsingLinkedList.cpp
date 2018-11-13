@@ -55,6 +55,7 @@ class IntegerStackUsingLinkedList
 		{
 			if (top != NULL)
 			{
+				cout << "Elements in the stack are: ";				
 				Node *temp = top;
 				while (temp->next != NULL)
 				{
@@ -100,7 +101,6 @@ int main ()
 				break;
 			case 3:
 				cout << "Selected operation is display\n";
-				cout << "Elements in the stack are\n";
 				stack.display();
 				break;
 			case 4:
